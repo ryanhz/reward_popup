@@ -4,6 +4,8 @@ import 'package:reward_popup/view/reward_card.dart';
 
 class RewardPopupPage extends StatefulWidget {
   const RewardPopupPage({super.key, required this.child});
+
+  ///The child of type [Widget] will be shown in the popup
   final Widget child;
 
   @override
@@ -17,7 +19,7 @@ class _RewardPopupPageState extends State<RewardPopupPage> {
       color: Colors.transparent,
       child: Stack(
         children: [
-          BackgroundMesh(),
+          const BackgroundMesh(),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+///This route is used to add the reward popup widget to the navigation stack
 class CustomRoute extends PageRouteBuilder {
   CustomRoute({required super.pageBuilder})
       : super(

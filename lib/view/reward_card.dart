@@ -5,6 +5,7 @@ import 'package:lottie/lottie.dart';
 class RewardCard extends StatefulWidget {
   const RewardCard({super.key, required this.child});
 
+  ///The child of type [Widget] will be shown in the popup
   final Widget child;
 
   @override

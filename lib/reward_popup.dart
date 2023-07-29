@@ -1,7 +1,16 @@
 library reward_popup;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
+import 'package:flutter/material.dart';
+import 'package:reward_popup/view/custom_route.dart';
+import 'package:reward_popup/view/page.dart';
+
+///Show a reward popup by calling this method and passing appropriate child patameter
+void showRewardPopup(BuildContext context, Widget child) {
+  Navigator.of(context).push(
+    CustomRoute(
+      pageBuilder: (context, _, __) => RewardPopupPage(
+        child: child,
+      ),
+    ),
+  );
 }
