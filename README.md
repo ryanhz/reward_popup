@@ -4,6 +4,8 @@ A flutter package to easily implement an attractive animated pop-up animation wi
 
 ## Demo
 
+[![Video](https://img.youtube.com/vi/v8jhP1y07NY/maxresdefault.jpg)](https://www.youtube.com/watch?v=v8jhP1y07NY)
+
 ## Getting Started
 
 Simply import the package 
