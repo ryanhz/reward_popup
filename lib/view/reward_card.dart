@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter/services.dart';
 
 class RewardCard extends StatefulWidget {
   const RewardCard({super.key, required this.child, this.precursorWidget});
@@ -49,17 +50,30 @@ class _RewardCardState extends State<RewardCard> with TickerProviderStateMixin {
     });
   }
 
+  Future<Uint8List> loadAsset() async {
+    ByteData data = await rootBundle.load('assets/animation_ljy5rgiq.json');
+    return data.buffer.asUint8List();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         widget.precursorWidget ??
-            LottieBuilder.asset(
-              'assets/animation_ljy5rgiq.json',
-              height: 320,
-              width: 280,
-              repeat: false,
-              controller: _lottieController,
+            FutureBuilder(
+              future: loadAsset(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return LottieBuilder.memory(
+                    snapshot.data ?? Uint8List.fromList([]),
+                    height: 320,
+                    width: 280,
+                    repeat: false,
+                    controller: _lottieController,
+                  );
+                }
+                return const SizedBox();
+              },
             ),
         AnimatedBuilder(
           animation: _scaleController,
