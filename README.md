@@ -18,16 +18,17 @@ Add a reference to the showRewardPackage method
 
 ```
 ElevatedButton(
-    onPressed: () => 
-    showRewardPopup(
+    onPressed: () => showRewardPopup(
         context,
-        Positioned.fill(
-                child: Image.asset(
+        child: Positioned.fill(
+            child: Image.asset(
                 'assets/elephant.jpg',
                 fit: BoxFit.cover,
-             ),
-           ),
+            ),
         ),
+    ),
     child: const Text('Pop-up example one'),
 ),
 ```
+
+*New: Customize the precursor animation by passing your own animation widget!
