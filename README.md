@@ -18,15 +18,29 @@ Add a reference to the showRewardPackage method
 
 ```
 ElevatedButton(
-    onPressed: () => showRewardPopup(
-        context,
-        child: Positioned.fill(
-            child: Image.asset(
-                'assets/elephant.jpg',
-                fit: BoxFit.cover,
-            ),
-        ),
-    ),
+              onPressed: () async {
+                final answer = await showRewardPopup<String>(
+                  context,
+                  child: WillPopScope(
+                    onWillPop: () {
+                      Navigator.of(context).pop('ok');
+                      return Future.value(true);
+                    },
+                    child: Positioned.fill(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).pop(true);
+                        },
+                        child: Image.asset(
+                          'assets/elephant.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                ),
+            );
+            print(answer);
+        },
     child: const Text('Pop-up example one'),
 ),
 ```

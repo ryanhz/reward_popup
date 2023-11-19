@@ -28,3 +28,10 @@ migrate_working_dir/
 .dart_tool/
 .packages
 build/
+
+# Ignore everything inside the example directory
+/example/*
+/example/**/*
+
+# Include the example/lib/main.dart file
+!/example/lib/main.dart

@@ -60,20 +60,24 @@ class _RewardCardState extends State<RewardCard> with TickerProviderStateMixin {
     return Stack(
       children: [
         widget.precursorWidget ??
-            FutureBuilder(
-              future: loadAsset(),
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  return LottieBuilder.memory(
-                    snapshot.data ?? Uint8List.fromList([]),
-                    height: 320,
-                    width: 280,
-                    repeat: false,
-                    controller: _lottieController,
-                  );
-                }
-                return const SizedBox();
-              },
+            SizedBox(
+              height: 320,
+              width: 280,
+              child: FutureBuilder(
+                future: loadAsset(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    return LottieBuilder.memory(
+                      snapshot.data ?? Uint8List.fromList([]),
+                      height: 320,
+                      width: 280,
+                      repeat: false,
+                      controller: _lottieController,
+                    );
+                  }
+                  return const SizedBox();
+                },
+              ),
             ),
         AnimatedBuilder(
           animation: _scaleController,
