@@ -11,6 +11,6 @@
 
 * New: Adding a return type for the route
 
-## 0.04
+## 0.0.4
 
 * Fix: Adding root bundler for asset
