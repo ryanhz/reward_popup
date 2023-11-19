@@ -14,3 +14,6 @@
 ## 0.0.4
 
 * Fix: Adding root bundler for asset
+
+## 0.0.5
+* Modified: Asset loading
