@@ -1,6 +1,6 @@
 name: reward_popup
 description: A flutter package to easily implement an attractive animated pop-up animation with gift and confetti animation.
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/srujanmhase/reward_popup
 
 environment:
