@@ -10,3 +10,7 @@
 ## 0.0.3
 
 * New: Adding a return type for the route
+
+## 0.04
+
+* Fix: Adding root bundler for asset
