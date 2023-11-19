@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () => showRewardPopup(
                 context,
-                Positioned.fill(
+                child: Positioned.fill(
                   child: Image.asset(
                     'assets/elephant.jpg',
                     fit: BoxFit.cover,
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () => showRewardPopup(
                 context,
-                const Positioned.fill(
+                child: const Positioned.fill(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
