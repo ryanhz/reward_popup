@@ -55,6 +55,14 @@ class _RewardCardState extends State<RewardCard> with TickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    _scaleController.dispose();
+    _lottieController.dispose();
+    _shineOffsetController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
