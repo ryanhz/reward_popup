@@ -37,3 +37,6 @@ build/
 !/example/lib/main.dart
 
 /configcheck/config.txt
+
+/android/*
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
