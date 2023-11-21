@@ -41,5 +41,8 @@ build/
 /android/*
 android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
 
-/ios/Flutter/Generated.xcconfig
-/ios/Flutter/flutter_export_environment.sh
+/ios/*
+
+/macos/*
+/windows/*
+/linux/*
