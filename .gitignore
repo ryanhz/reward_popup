@@ -35,3 +35,5 @@ build/
 
 # Include the example/lib/main.dart file
 !/example/lib/main.dart
+
+/configcheck/config.txt
