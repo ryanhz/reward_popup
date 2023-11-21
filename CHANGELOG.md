@@ -17,3 +17,6 @@
 
 ## 0.0.5
 * Modified: Asset loading
+
+## 0.0.6
+* Fix: Asset loading, dismiss button & callback, contributors
