@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:lottie/lottie.dart';
@@ -40,19 +42,24 @@ class _RewardCardState extends State<RewardCard> with TickerProviderStateMixin {
       duration: const Duration(seconds: 3),
     );
     _scale = Tween<double>(begin: 0, end: 1).animate(_scaleController);
-    _shineOne =
-        Tween<double>(begin: 0, end: -640).animate(_shineOffsetController);
+    _shineOne = Tween<double>(begin: 0, end: -640).animate(_shineOffsetController);
 
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
-      _lottieController.forward().then((value) => _scaleController
-          .forward()
-          .then((value) => _shineOffsetController.forward()));
+      _lottieController.forward().then((value) => _scaleController.forward().then((value) => _shineOffsetController.forward()));
     });
   }
 
   Future<Uint8List> loadAsset() async {
-    ByteData data = await rootBundle.load('assets/animation_ljy5rgiq.json');
+    ByteData data = await rootBundle.load('packages/reward_popup/assets/lottie/animation.json');
     return data.buffer.asUint8List();
+  }
+
+  @override
+  void dispose() {
+    _scaleController.dispose();
+    _lottieController.dispose();
+    _shineOffsetController.dispose();
+    super.dispose();
   }
 
   @override

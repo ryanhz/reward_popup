@@ -74,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () => showRewardPopup(
                 context,
+                enableDismissByTappingOutside: true,
                 child: Positioned.fill(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +87,45 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               child: const Text('Pop-up example two'),
-            )
+            ),
+            ElevatedButton(
+              onPressed: () => showRewardPopup(
+                context,
+                enableDismissByTappingOutside: true,
+                dismissButton: TextButton(child: Text("Close"), onPressed: () => Navigator.of(context).pop()),
+                child: Positioned.fill(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Coupon Code'),
+                      Text('Reach out to redeem'),
+                      Text('abcd xyz'),
+                    ],
+                  ),
+                ),
+              ),
+              child: const Text('Pop-up example three with dismiss button'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                await showRewardPopup(
+                  context,
+                  enableDismissByTappingOutside: true,
+                  child: Positioned.fill(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Coupon Code'),
+                        Text('Reach out to redeem'),
+                        Text('abcd xyz'),
+                      ],
+                    ),
+                  ),
+                );
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Popup dismissed")));
+              },
+              child: const Text('Pop-up example four'),
+            ),
           ],
         ),
       ),

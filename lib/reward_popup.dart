@@ -11,11 +11,15 @@ Future<T?> showRewardPopup<T>(
   BuildContext context, {
   required Widget child,
   Widget? precursorWidget,
+  bool? enableDismissByTappingOutside,
+  Widget? dismissButton,
 }) {
   return Navigator.of(context).push<T>(
     CustomRoute(
       pageBuilder: (context, _, __) => RewardPopupPage(
         precursorWidget: precursorWidget,
+        enableDismissByTappingOutside: enableDismissByTappingOutside,
+        dismissButton: dismissButton,
         child: child,
       ),
     ),

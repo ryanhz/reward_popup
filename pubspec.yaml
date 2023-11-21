@@ -4,7 +4,7 @@ version: 0.0.5
 repository: https://github.com/srujanmhase/reward_popup
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -23,7 +23,6 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   uses-material-design: true
-
-  # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/
+    - packages/reward_popup/assets/lottie/animation.json
+  # To add assets to your application, add an assets section, like this:
