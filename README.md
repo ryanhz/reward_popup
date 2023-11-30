@@ -46,3 +46,8 @@ ElevatedButton(
 ```
 
 *New: Customize the precursor animation by passing your own animation widget!
+
+## Contributors
+[<img src="https://github.com/srujanmhase.png" width="60px;"/><br /><sub><a href="https://github.com/srujanmhase">srujanmhase</a></sub>](https://github.com/srujanmhase/reward_popup/tree/main)
+
+[<img src="https://github.com/bahadirarslan.png" width="60px;"/><br /><sub><a href="https://github.com/bahadirarslan">bahadirarslan</a></sub>](https://github.com/bahadirarslan/reward_popup/tree/main)
