@@ -12,6 +12,7 @@ Future<T?> showRewardPopup<T>(
   required Widget child,
   Widget? precursorWidget,
   bool? enableDismissByTappingOutside,
+  Color? backgroundColor,
   Widget? dismissButton,
 }) {
   return Navigator.of(context).push<T>(
@@ -20,6 +21,7 @@ Future<T?> showRewardPopup<T>(
         precursorWidget: precursorWidget,
         enableDismissByTappingOutside: enableDismissByTappingOutside,
         dismissButton: dismissButton,
+        backgroundColor: backgroundColor,
         child: child,
       ),
     ),

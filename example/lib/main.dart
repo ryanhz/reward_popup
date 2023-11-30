@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Navigator.of(context).pop(true);
                         },
                         child: Image.asset(
-                          'assets/elephant.jpg',
+                          'assets/elephant.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -125,6 +125,33 @@ class _MyHomePageState extends State<MyHomePage> {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Popup dismissed")));
               },
               child: const Text('Pop-up example four'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                final answer = await showRewardPopup<String>(
+                  context,
+                  backgroundColor: Colors.teal,
+                  child: WillPopScope(
+                    onWillPop: () {
+                      Navigator.of(context).pop('ok');
+                      return Future.value(true);
+                    },
+                    child: Positioned.fill(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).pop(true);
+                        },
+                        child: Image.asset(
+                          'assets/elephant.png',
+                          fit: BoxFit.scaleDown,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+                print(answer);
+              },
+              child: const Text('Pop-up example five with background cololor'),
             ),
           ],
         ),
