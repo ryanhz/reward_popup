@@ -22,25 +22,23 @@ migrate_working_dir/
 #.vscode/
 
 # Flutter/Dart/Pub related
-# Libraries should not include pubspec.lock, per https://dart.dev/guides/libraries/private-files#pubspeclock.
-/pubspec.lock
 **/doc/api/
+**/ios/Flutter/.last_build_id
 .dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
 .packages
-build/
+.pub-cache/
+.pub/
+/build/
 
-# Ignore everything inside the example directory
-/example/build/*
+# Symbolication related
+app.*.symbols
 
+# Obfuscation related
+app.*.map.json
 
-
-/configcheck/config.txt
-
-/android/*
-android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
-
-/ios/*
-
-/macos/*
-/windows/*
-/linux/*
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
