@@ -20,3 +20,6 @@
 
 ## 0.0.6
 * Fix: Asset loading, dismiss button & callback, contributors
+
+## 0.0.7
+* Added Feature Request: Background color
