@@ -16,33 +16,30 @@ import 'package:reward_pop_up/reward_pop_up.dart';
 
 Add a reference to the showRewardPackage method
 
+More examples in the example directory of the repository & example tab.
+
 ```
 ElevatedButton(
               onPressed: () async {
                 final answer = await showRewardPopup<String>(
                   context,
-                  child: WillPopScope(
-                    onWillPop: () {
-                      Navigator.of(context).pop('ok');
-                      return Future.value(true);
-                    },
-                    child: Positioned.fill(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.of(context).pop(true);
-                        },
-                        child: Image.asset(
-                          'assets/elephant.jpg',
-                          fit: BoxFit.cover,
-                        ),
+                  backgroundColor: Colors.black,
+                  child: Positioned.fill(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop(true);
+                      },
+                      child: Image.asset(
+                        'assets/elephant.jpg',
+                        fit: BoxFit.cover,
                       ),
                     ),
-                ),
-            );
-            print(answer);
-        },
-    child: const Text('Pop-up example one'),
-),
+                  ),
+                );
+                //Use answer
+              },
+              child: const Text('Pop-up example one'),
+            ),
 ```
 
 *New: Customize the precursor animation by passing your own animation widget!
