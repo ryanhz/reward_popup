@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:reward_popup/reward_popup.dart';
 
@@ -49,25 +51,20 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () async {
                 final answer = await showRewardPopup<String>(
                   context,
-                  child: WillPopScope(
-                    onWillPop: () {
-                      Navigator.of(context).pop('ok');
-                      return Future.value(true);
-                    },
-                    child: Positioned.fill(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.of(context).pop(true);
-                        },
-                        child: Image.asset(
-                          'assets/elephant.png',
-                          fit: BoxFit.cover,
-                        ),
+                  backgroundColor: Colors.black,
+                  child: Positioned.fill(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop(true);
+                      },
+                      child: Image.asset(
+                        'assets/elephant.jpg',
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
                 );
-                print(answer);
+                //Use answer
               },
               child: const Text('Pop-up example one'),
             ),
@@ -75,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () => showRewardPopup(
                 context,
                 enableDismissByTappingOutside: true,
-                child: Positioned.fill(
+                child: const Positioned.fill(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -92,8 +89,11 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () => showRewardPopup(
                 context,
                 enableDismissByTappingOutside: true,
-                dismissButton: TextButton(child: Text("Close"), onPressed: () => Navigator.of(context).pop()),
-                child: Positioned.fill(
+                dismissButton: TextButton(
+                  child: const Text("Close"),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+                child: const Positioned.fill(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -111,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 await showRewardPopup(
                   context,
                   enableDismissByTappingOutside: true,
-                  child: Positioned.fill(
+                  child: const Positioned.fill(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -122,7 +122,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 );
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Popup dismissed")));
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Popup dismissed"),
+                    ),
+                  );
+                }
               },
               child: const Text('Pop-up example four'),
             ),
@@ -131,25 +137,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 final answer = await showRewardPopup<String>(
                   context,
                   backgroundColor: Colors.teal,
-                  child: WillPopScope(
-                    onWillPop: () {
-                      Navigator.of(context).pop('ok');
-                      return Future.value(true);
-                    },
-                    child: Positioned.fill(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.of(context).pop(true);
-                        },
-                        child: Image.asset(
-                          'assets/elephant.png',
-                          fit: BoxFit.scaleDown,
-                        ),
+                  child: Positioned.fill(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop(true);
+                      },
+                      child: Image.asset(
+                        'assets/elephant.png',
+                        fit: BoxFit.scaleDown,
                       ),
                     ),
                   ),
                 );
-                print(answer);
+                //Use answer
               },
               child: const Text('Pop-up example five with background cololor'),
             ),

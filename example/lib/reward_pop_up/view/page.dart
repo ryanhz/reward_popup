@@ -1,6 +1,6 @@
+import 'package:example/reward_pop_up/view/mesh.dart';
+import 'package:example/reward_pop_up/view/reward_card.dart';
 import 'package:flutter/material.dart';
-import 'package:reward_popup_demo/reward_pop_up/view/mesh.dart';
-import 'package:reward_popup_demo/reward_pop_up/view/reward_card.dart';
 
 class RewardPopupPage extends StatefulWidget {
   const RewardPopupPage({super.key, required this.child});
@@ -17,7 +17,7 @@ class _RewardPopupPageState extends State<RewardPopupPage> {
       color: Colors.transparent,
       child: Stack(
         children: [
-          BackgroundMesh(),
+          const BackgroundMesh(),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
