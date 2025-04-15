@@ -40,8 +40,10 @@ class _BackgroundMeshState extends State<BackgroundMesh>
   Future<void> startAnimations() async {
     _firstController.repeat();
     await Future.delayed(const Duration(milliseconds: 1000));
+    if (!mounted) return;
     _secondController.repeat();
     await Future.delayed(const Duration(milliseconds: 1000));
+    if (!mounted) return;
     _thirdController.repeat();
   }
 
